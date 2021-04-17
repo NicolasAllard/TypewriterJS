@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Typewriter.Js</title>
+    <link href="../typewriter.css" rel="stylesheet" />
+    <style>
+        .content {
+            display: flex;
+            width: 100%;
+            height: 500px;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .title {
+            display: flex;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .form {
+            display: flex;
+            flex: 1;
+            width: 50%;
+            border: 1px dashed black;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>Write the text and the speed (in milliseconds) for the typewriter.</label>
+        <input type="text" id="txtVal" />
+        <input type="number" id="txtSpeed" value="100" />
+        <button id="btnSet" onclick="setTw()">Set</button>
+    </div>
+
+    <div class="content">
+        <div class="title">Typewriter zone</div>
+        <div class="form">
+            <div id="targetDiv">
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="reset()">Reset</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="start()">Start</button>
+        </div>
+    </div>
+    <audio id="keystroke-audio" src="audio/keystroke.mp3" preload="auto"></audio>
+    <script src="../typewriter.js"></script>
+    <script>
+        var audio = new Audio('audio/keystroke.mp3');
+        var txtVal = document.getElementById("txtVal");
+        var txtSpeed = document.getElementById("txtSpeed");
+        var tw;
+
+        function sfx() {
+            const origAudio = document.getElementById("keystroke-audio");
+            const newAudio = origAudio.cloneNode()
+            newAudio.play()
+        }
+
+        function setTw() {
+            tw = new TypeWriter("#targetDiv", txtVal.value, txtSpeed.value, "", true, function () {
+                sfx()
+            }, function () {
+                console.log("Done!")
+            });
+        }
+
+        function reset() {
+            if (tw != undefined) {
+                tw.reset();
+            }
+        }
+
+        function stop() {
+            if (tw != undefined) {
+                tw.stop();
+            }
+        }
+
+        function start() {
+            if (tw != undefined) {
+                tw.start();
+            }
+        }
+    </script>
+</body>
+
+</html>
