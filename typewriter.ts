@@ -181,6 +181,10 @@ class TypeWriter {
         }
     }
 
+    /**
+     * 
+     * @param index: Index of the character in the set text to type. 
+     */
     private type(index: number) {
         if (index <= this.getText().length - 1) {
             this.timeout = setTimeout(() => this.addCharacter(index), this.delay)
@@ -193,6 +197,10 @@ class TypeWriter {
         }
     }
 
+    /**
+     * 
+     * @param index: Index of the character in the set text to type.
+     */
     private addCharacter(index: number) {
         //Reset text
         if (this.wrapper != undefined) {

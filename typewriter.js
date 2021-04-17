@@ -3,7 +3,7 @@
  * @author Nicolas Allard
  * @version 1.0
  * @license MIT
- *
+ 
  * Copyright (c) 2021 Nicolas Allard
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,9 +35,7 @@ var TypeWriter = /** @class */ (function () {
      * @param callback: function - Function called after finishing typing the text
      */
     function TypeWriter(target, text, delay, classname, showCursor, typeEvent, callback) {
-        if (showCursor === void 0) {
-            showCursor = true;
-        }
+        if (showCursor === void 0) { showCursor = true; }
         this.target = target;
         this.text = text;
         this.delay = delay;
@@ -57,7 +55,7 @@ var TypeWriter = /** @class */ (function () {
     /**
      * Set target
      * @param selector: string representing the selector of the DOM element on which the typewriter types.
-     */
+    */
     TypeWriter.prototype.setTarget = function (selector) {
         if (document.querySelector(this.target) != undefined) {
             this.target = selector;
@@ -69,7 +67,8 @@ var TypeWriter = /** @class */ (function () {
             cursor.className = "tw-cursor";
             this.wrapper.appendChild(textBlock);
             this.wrapper.appendChild(cursor);
-        } else {
+        }
+        else {
             throw Error("The target element could not be found.");
         }
     };
@@ -127,7 +126,8 @@ var TypeWriter = /** @class */ (function () {
                 cursor.classList.toggle("visible", this.showCursor);
             }
             this.type(this.currentIndex);
-        } else {
+        }
+        else {
             throw Error("The typewriter is already typing.");
         }
     };
@@ -154,23 +154,31 @@ var TypeWriter = /** @class */ (function () {
     TypeWriter.prototype.isTyping = function () {
         if (this.timeout == undefined) {
             return false;
-        } else {
+        }
+        else {
             return true;
         }
     };
+    /**
+     *
+     * @param index: Index of the character in the set text to type.
+     */
     TypeWriter.prototype.type = function (index) {
         var _this = this;
         if (index <= this.getText().length - 1) {
-            this.timeout = setTimeout(function () {
-                return _this.addCharacter(index);
-            }, this.delay);
-        } else {
+            this.timeout = setTimeout(function () { return _this.addCharacter(index); }, this.delay);
+        }
+        else {
             if (this.callback != undefined) {
                 this.stop();
                 this.callback();
             }
         }
     };
+    /**
+     *
+     * @param index: Index of the character in the set text to type.
+     */
     TypeWriter.prototype.addCharacter = function (index) {
         //Reset text
         if (this.wrapper != undefined) {
