@@ -1,4 +1,6 @@
 # TypewriterJS
+
+![demo](https://github.com/NicolasAllard/TypewriterJS/blob/main/typewriter.gif?raw=true)
 TypewriterJS is a small library made in TypeScript, that allows to create a typing animation.
 
 ### Implementation<hr>
