@@ -10,7 +10,7 @@ Simply add the css file and the javascript file in the head tag of your html fil
 `<script src='typewriter.js'></script>`
 
 ### How to use<hr>
-1. Create a new instance of Typewriter like so:
+1. Create a new instance of Typewriter like so:<br>
 `let typeWriter = new TypeWriter(target,  text,  delay,  classname,  showCursor,  typeEvent,  callback);`
 
 |Parameter| Type | Description |
