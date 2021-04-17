@@ -5,6 +5,11 @@
     <title>Typewriter.Js</title>
     <link href="../typewriter.css" rel="stylesheet" />
     <style>
+        @font-face {
+            font-family: twFont;
+            src: url(JMH\ Typewriter.ttf);
+        }
+
         .content {
             display: flex;
             width: 100%;
@@ -24,13 +29,20 @@
         .form {
             display: flex;
             flex: 1;
+            justify-content: center;
+            padding: 10px;
             width: 50%;
-            border: 1px dashed black;
+            background-color: #ffffe4;
+            font-size: 26px;
         }
 
         .controls {
             display: flex;
             justify-content: space-between;
+        }
+
+        .twExtraClass {
+            font-family: twFont;
         }
     </style>
 </head>
@@ -70,7 +82,7 @@
         }
 
         function setTw() {
-            tw = new TypeWriter("#targetDiv", txtVal.value, txtSpeed.value, "", true, function () {
+            tw = new TypeWriter("#targetDiv", txtVal.value, txtSpeed.value, "twExtraClass", true, function () {
                 sfx()
             }, function () {
                 console.log("Done!")
