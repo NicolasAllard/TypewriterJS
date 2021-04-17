@@ -1,0 +1,31 @@
+@keyframes cursorAnim {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.tw-wrapper {
+    display: block;
+}
+
+.tw-text {
+    display: inline;
+}
+
+.tw-cursor {
+    display: inline-block;
+    visibility: hidden;
+    width: 2px;
+    height: 1em;
+    background-color: black;
+    margin-left: 3px;
+    animation: cursorAnim 0.25s infinite alternate;
+}
+
+.tw-cursor.visible {
+    visibility: visible;
+}
