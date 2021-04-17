@@ -2,8 +2,8 @@
 TypewriterJS is a small library made in TypeScript, that allows to create a typing animation.
 
 ### Implementation<hr>
-Simply add the css file and the javascript file in the head tag of your html file, like so:
-`<link rel='stylesheet' src='typewriter.css'/>`
+Simply add the css file and the javascript file in the head tag of your html file, like so:<br>
+`<link rel='stylesheet' src='typewriter.css'/>`<br>
 `<script src='typewriter.js'></script>`
 
 ### How to use<hr>
@@ -28,8 +28,10 @@ Simply add the css file and the javascript file in the head tag of your html fil
 | setDelay | void | typeWriter.setDelay(milliseconds: number) | Set delay between each characters. |
 | setClass | void | typeWriter.setClass(classname: string) | Set classname for the wrapper containing the text element and the cursor |
 | setShowCursor | void | typeWriter.setShowCursour(bool:  boolean) | Set whether or not the typewriter should show the text cursor |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| setTypeEvent | void | typeWriter.setTypeEvent(func: () =>  void) | Set a method that will be called on each keystroke |
+| setCallback | void | typeWriter.setCallback(func: () =>  void) | Set a method that will be called at the end of the text |
+| getText | string | typeWriter.getText() | Get text that was set for the typewriter |
+| start | void | typeWriter.start() | Start the typewriter |
+| stop | void | typeWriter.stop() | Stop the typewriter |
+| reset | void | typeWriter.reset() | Reset the typewriter |
+| isTyping | boolean | typeWriter.isTyping() | Returns true or false depending on if the typewritter is typing. |
