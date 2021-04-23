@@ -7,7 +7,7 @@ TypewriterJS is a small library made in TypeScript, that allows to create a typi
 
 ### Implementation<hr>
 Simply add the css file and the javascript file in the head tag of your html file, like so:<br>
-`<link rel='stylesheet' src='typewriter.css'/>`<br>
+`<link rel='stylesheet' href='typewriter.css'/>`<br>
 `<script src='typewriter.js'></script>`
 
 ### How to use<hr>
